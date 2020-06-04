@@ -1,9 +1,119 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+body {
+  background: linear-gradient(436.3deg, rgba(239,236,237,1) 0%, rgba(192,178,185,1) 45.66%, rgba(187,172,180,1) 100%, rgba(186,171,179,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: futura-pt, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-#greeting-container {
-  margin-top: 20px;
+html {
+  background: rgba(192,178,185,1) 45.66%;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  letter-spacing: .1em;
+  color: rgba(65,31,35,.61);
+  position: relative;
+  font-size: 1.7vw;
+  height: 6vh; 
+  overflow-y: visible;
+  text-transform: uppercase;
+}
+
+#logo {
+  bottom: 0;
+  color: #411F23;
+  margin-left: 2.6vw;
+  float: left;
+  font-size: 3.2vw;
+}
+#option {
+  display: flex;
+  justify-content: flex-end;
+  padding-left:3vw;
+  height: auto;
+}
+a {
+  height: auto;
+}
+.navBar .active {
+  color: #411F23;
+}
+.navOptions {
+  bottom: 0;
+  right: 3.5vw; 
+  position: absolute;
+  float: left;
+  display: flex;
+  height: auto;
+  justify-content: flex-end;
+}
+.container {
+  letter-spacing: .1em;
+  width: 94%;
+  position: relative;
+  margin-left: 2.7vw;
+  margin-top: 10vh;
+}
+
+img:not(.png) {
+  width: 100%;
+}
+
+#title {
+  position: absolute;
+  top: 10%;
+  padding-left: 3%;
+  right: 6%;
+  width: 55%;
+  height: auto;
+  font-size: 7vw;
+  color: #FFFFFF;
+}
+
+#homeContent {
+  position: absolute;
+  padding-top: 3%;
+  font-family: acumin-pro, sans-serif; 
+  font-weight: 400;
+  top: 26%;
+  right: 6%;
+  width: 55%;
+  height: auto;
+  font-size: 2.5vw;
+  color: #FFFFFF;
+}
+
+#arrowBtn {
+  padding-top: 4vh;
+  display: block;
+  width: 8.8%;
+  height: 8.8%;
+  z-index: 2;
+  margin: auto;
+}
+
+
+
