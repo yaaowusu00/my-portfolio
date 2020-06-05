@@ -1,3 +1,4 @@
+/*contains the style for landing page and general items like the header*/
 body {
   background: linear-gradient(436.3deg, rgba(239,236,237,1) 0%, rgba(192,178,185,1) 45.66%, rgba(187,172,180,1) 100%, rgba(186,171,179,1) 100%);
   background-repeat: no-repeat;
@@ -6,19 +7,17 @@ body {
   font-family: futura-pt, sans-serif;
   font-weight: 700;
   font-style: normal;
-}
-
-html {
-  background: rgba(192,178,185,1) 45.66%;
   margin: 0;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   overflow: auto;
 }
 
-body {
+html {
+  background: rgba(192,178,185,1) 45.66%;
+  scroll-behavior: smooth;
   margin: 0;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   overflow: auto;
 }
@@ -30,11 +29,13 @@ ul {
 }
 
 .navBar {
+  padding-top: 10px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   letter-spacing: .1em;
-  color: rgba(65,31,35,.61);
+  color: rgba(46, 29, 31, 0.713);
   position: relative;
   font-size: 1.7vw;
   height: 6vh; 
@@ -43,11 +44,12 @@ ul {
 }
 
 #logo {
-  bottom: 0;
+  display: flex;
+  align-items: flex-end;
   color: #411F23;
   margin-left: 2.6vw;
-  float: left;
-  font-size: 3.2vw;
+  padding-top: 10px;
+  font-size: 2.7vw;
 }
 #option {
   display: flex;
@@ -55,14 +57,21 @@ ul {
   padding-left:3vw;
   height: auto;
 }
+
 a {
   height: auto;
 }
+
+li > a {
+    color: inherit;
+}
+
 .navBar .active {
   color: #411F23;
 }
+
 .navOptions {
-  bottom: 0;
+  align-items: flex-end;
   right: 3.5vw; 
   position: absolute;
   float: left;
@@ -70,35 +79,36 @@ a {
   height: auto;
   justify-content: flex-end;
 }
+
 .container {
   letter-spacing: .1em;
   width: 94%;
   position: relative;
   margin-left: 2.7vw;
-  margin-top: 10vh;
-}
-
-img:not(.png) {
-  width: 100%;
+  margin-top: 8vh;
+  margin-bottom: 4vh;
 }
 
 #title {
   position: absolute;
-  top: 10%;
+  top: 0;
+  padding-top: 6.5%;
   padding-left: 3%;
+  padding-bottom: 3%;
   right: 6%;
   width: 55%;
   height: auto;
-  font-size: 7vw;
+  font-size: 6.5vw;
   color: #FFFFFF;
 }
 
 #homeContent {
+  display: flex; 
+  flex-direction: column;
   position: absolute;
-  padding-top: 3%;
   font-family: acumin-pro, sans-serif; 
   font-weight: 400;
-  top: 26%;
+  top: 30%;
   right: 6%;
   width: 55%;
   height: auto;
@@ -106,14 +116,84 @@ img:not(.png) {
   color: #FFFFFF;
 }
 
-#arrowBtn {
-  padding-top: 4vh;
-  display: block;
-  width: 8.8%;
-  height: 8.8%;
-  z-index: 2;
-  margin: auto;
+#aboutSection{
+  margin: 0 auto;
+  margin-top: 4vh;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
+#aboutTitle {
+  text-align: center;
+  color: black;
+  width: 40%; 
+  font-size: 5vw;
+  margin: 0 auto;
+  overflow: hidden; /* so the rest of text is hidden while "typing" */
+  white-space: nowrap; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end 8;
+  border-right: .15em solid transparent;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 40%;}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  35% { border-color: #411F23; }
+}
+.aboutText{
+  text-align: left;
+  font-weight: 450;
+  padding:3%;
+  padding-bottom:1%;
+  color: black;
+  font-size: 2vw;
+  margin: 0 auto;
+} 
+#scrollTo {
+  background-color: whitesmoke;
+  margin-bottom: 2vh;
+}
+#text2 {
+  padding-top:0%;
+}
+  
+a:link {
+  text-decoration: none; 
+}
+.aboutText a {
+  color: rgb(201, 60, 105);
+  border-bottom: rgb(201, 60, 105) 0.125em solid;
+}
+
+.aboutText a :visited {
+  color:  rgb(201, 60, 105);
+  border-bottom: rgb(201, 60, 105) 0.125em solid;
+}
+#arrowBtn {
+  width: auto;
+  height: 80%;
+  z-index: 2;
+  margin: 0 auto;
+}
+#btnLink {
+  display: flex;
+  align-self: center;
+}
+img:not(.png) {
+  width: 100%;
+}
 
 

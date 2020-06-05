@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Yaa Owusu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://use.typekit.net/wkj4sej.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+    <header>
+        <div class="navBar">
+        <div id="logo">Yaa Owusu</div>
+        <ul class="navOptions">
+            <li id="option"><a href='.'>Home</a></li>
+            <li id="option"><a href='/about.html'>About</a></li>
+            <li id="option" class="active"><a href='/projects.html'>Projects</a></li>
+            <li id="option"><a href='/contact.html'>Contact</a></li>
+            <li id="option">
+                <a href="https://github.com/yaaowusu00">
+                    <img src="githubSmall.svg" alt="Link to GitHub"/>
+                 </a>
+            </li>
+        </ul>
+        </div>
+    </header>
+    <body>
+    <!-- The grid: 2 columns -->
+        <div class= "grid">
+            <div class="Row2">
+                <div class="pictureBox" id="grad" onclick="openTab('gradDescription');">
+                    <div class="name">Yale Daily News Site</div>
+                </div>
+                <div class="pictureBox" id="map" onclick="openTab('mapDescription');">
+                    <div class="name">Interactive Map</div>
+                </div>
+                <div class="pictureBox" id="fudge" onclick="openTab('fudgeDescription');">
+                    <div class="name">Fudge Ratio Calculator</div>
+                </div>
+            </div>
+            <div class="Row2">
+                <div class="pictureBox" id="mhgap" onclick="openTab('mhgapDescription');">
+                    <div class="name">Mental Health Gap Web App</div>
+                </div>
+                <div class="pictureBox" id="breakout" onclick="openTab('brDescription');">
+                    <div class="name">Atari Breakout Recreation</div>
+                </div>
+                <div class="pictureBox" id="firstYr" onclick="openTab('fyDescription');">
+                    <div class="name">Yale Daily News Site</div>
+                </div>
+            </div>
+        </div>
+        <!-- The pop up descriptions (hidden by default) -->
+        <div class="content">
+            <div id="brDescription" class="descriptionContainer" style="height: 0px; padding: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>Atari Breakout Recreation</h2>
+                    <p>...</p>
+                </div>
+            </div>
+            <div id="mhgapDescription" class="descriptionContainer" style="height: 0px; padding: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>Mental Health Gap Web App</h2>
+                    <p>...</p>
+                </div>
+            </div>
+            <div id="gradDescription" class="descriptionContainer" style="height: 0px; padding: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>YDN Commencement Issue</h2>
+                    <p>...</p>
+                </div>
+            </div>
+            <div id="fyDescription" class="descriptionContainer"  style="height: 0px; padding: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>YDN First Year Issue</h2>
+                    <p>...</p>
+                </div>
+            </div>
+            <div id="fudgeDescription" class="descriptionContainer"  style="height: 0px; padding: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>Fudge Ratio Calculator</h2>
+                    <p>...</p>
+                </div>
+            </div>
+            <div id="mapDescription" class="descriptionContainer"  style="height: 0px; padding: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>Interactive Map of Yale Study Spots</h2>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+        <!-- End of the descriptions (hidden by default) -->
+    </body>
+</html>
