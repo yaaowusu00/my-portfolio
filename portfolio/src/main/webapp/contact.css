@@ -1,0 +1,39 @@
+
+#contactTitle {
+    margin: 0 auto;
+    font-size: 3.7vw; 
+    text-align: center; 
+    margin-top: 10vh; 
+}
+#contactSubtitle {
+    margin: 0 auto;
+    text-align: center; 
+    margin-top: 3vh; 
+}
+#iconFlex {
+    margin-top: 5vh; 
+    display: flex;
+    flex-direction: row; 
+}
+.iconBox {
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    width: 25%;
+    height: 37%;
+    margin: auto;
+}
+.pic {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+figcaption {
+    background-color: #222;
+    border-radius: 20px;
+    color: #fff;
+    font: italic medium sans-serif;
+    padding: 1em;
+    text-align: center;
+    vertical-align:center;
+}
