@@ -18,6 +18,7 @@ const openTab = (tabName) => {
     elements.forEach(description => (description.style.padding = description.id === tabName ? "2% 3%" : "0"));
 };  
 
+/*closes pop up on projects page when you click the x*/
 const closeTab = (tabName) => {
     openTab(tabName, "close"); 
     $(".content").css({"z-index":"-3"});
