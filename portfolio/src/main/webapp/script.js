@@ -20,7 +20,7 @@ const openTab = (tabName) => {
 
 /*closes pop up on projects page when you click the x*/
 const closeTab = (tabName) => {
-    openTab(tabName, "close"); 
+    openTab(tabName, "close");  
     $(".content").css({"z-index":"-3"});
 };
 
