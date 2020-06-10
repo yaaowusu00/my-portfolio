@@ -1,3 +1,9 @@
+/* hide the page until inital javascript functions are done*/
+html { visibility:hidden; }
+
+#aboutsection {
+    min-height: 80vh; 
+}
 .aboutText a {
   color: rgb(201, 60, 105);
   border-bottom: rgb(201, 60, 105) 0.125em solid;
