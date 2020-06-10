@@ -61,9 +61,13 @@ ul {
 a {
   height: auto;
 }
+/*fixes problem of logo turning blue in mobile*/
+#logo > a{
+  color: #411F23; 
+}
 
 li > a {
-    color: inherit;
+  color: inherit;
 }
 
 .navBar .active {
@@ -173,25 +177,11 @@ li > a {
 a:link {
   text-decoration: none; 
 }
-.aboutText a {
-  color: rgb(201, 60, 105);
-  border-bottom: rgb(201, 60, 105) 0.125em solid;
+a:visited {
+  color: inherit;
 }
 
-.aboutText a :visited {
-  color:  rgb(201, 60, 105);
-  border-bottom: rgb(201, 60, 105) 0.125em solid;
-}
-#arrowBtn {
-  width: auto;
-  height: 80%;
-  z-index: 2;
-  margin: 0 auto;
-}
-#btnLink {
-  display: flex;
-  align-self: center;
-}
+
 img:not(.png) {
   width: 100%;
 }
