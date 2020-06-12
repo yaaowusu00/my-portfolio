@@ -1,8 +1,12 @@
+//display each comment on contact page in a "comment container"
 const getContent = () => {
     fetch('/data').then(response => response.json()).then((data) => {
         for (msg in data) {
-            //display each message on page in a <p> tag
-            $( "#requestContainer" ).append( "<p>" + data[msg] + "</p>" ); 
+            let commentElement = $("<p></p>").text((data[msg]).text);
+            $("#commentContainer").append('<div class = "commentBox">' +
+            '<h1 class = "nameHeading">' +  (data[msg]).userName  + '</h1>' +
+            '<h3 class = "time">' +  (data[msg]).readableDate  + '</h3>' +
+            '<p class = "commentText">'+ (data[msg]).text + '</p></div>'); 
         }
     });
 };
@@ -10,10 +14,8 @@ const getContent = () => {
 /* determines position of the content on the top part of the about page so that it is consistent no matter what size the device is*/
 const calculateAboutHeight = () => {
     let navHeight = $('.navBar').get(0).scrollHeight;
-    console.log(navHeight);
     let viewportHeight = $(window).height();
     let aboutHeight = viewportHeight - navHeight
-    console.log(aboutHeight);
     $('#aboutSection').css('height', aboutHeight);
 };
 
@@ -41,6 +43,7 @@ $(document).ready(function(){
     $('#logo').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
     $('.navOptions').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
     $(window).on('load', calculateAboutHeight); 
+    getContent();
     document.getElementsByTagName("html")[0].style.visibility = "visible";
     window.addEventListener('resize', calculateAboutHeight);
 });

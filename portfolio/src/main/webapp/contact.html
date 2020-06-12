@@ -27,33 +27,46 @@
         </div>
     </header>
     <body>
-    <h1 id="contactTitle">You can find me on these platforms:</h1>
-    <div id="iconFlex"> 
-        <a class="iconBox" href="www.linkedin.com/in/yaaowusu00" target="_blank">
-        <figure>
-            <img class="pic" src="contactImgs/LI-In-Bug.png"
-                        alt="link to my LinkedIn profile"/>
-            <figcaption>View my LinkedIn profile</figcaption>
-        </figure>
-        </a>
-        <!-- thinking about a more secure option here 
-        <a href="mailto:..">
+    <div id="iconSection"> 
+        <div id="iconFlex"> 
+            <a class="iconBox" href="www.linkedin.com/in/yaaowusu00" target="_blank">
             <figure>
-                <img class="pic" src="..."
-                        alt="Link to email">
-                <figcaption>Email me</figcaption>
+                <img class="pic" src="contactImgs/LI-In-Bug.png"
+                            alt="link to my LinkedIn profile"/>
+                <figcaption>View my LinkedIn profile</figcaption>
             </figure>
-        </a>*/-->
-        <a class="iconBox" href="https://github.com/yaaowusu00" target="_blank">
-            <figure>
-                <img class="pic" src="contactImgs/githubLarge.svg"
-                        alt="Link to my GitHub profile"/>
-                <figcaption>View my Github profile</figcaption>
-            </figure>   
-        </a>
+            </a>
+            <!-- thinking about a more secure option here 
+            <a href="mailto:..">
+                <figure>
+                    <img class="pic" src="..."
+                            alt="Link to email">
+                    <figcaption>Email me</figcaption>
+                </figure>
+            </a>*/-->
+            <a class="iconBox" href="https://github.com/yaaowusu00" target="_blank">
+                <figure>
+                    <img class="pic" src="contactImgs/githubLarge.svg"
+                            alt="Link to my GitHub profile"/>
+                    <figcaption>View my Github profile</figcaption>
+                </figure>   
+            </a>
+        </div>
     </div>
-    <h2 id="contactSubtitle" onclick="getContent()">Leave a comment!</h2>
-    <div id="requestContainer"></div>
-    <h2 id="contactSubtitle">Thank you for visiting!</h2>
+    <div id="commentSection"> 
+        <div class="commentForm">
+            <h2 class="contactSubtitle">Leave a comment!</h2>
+            <form action="/data" method="POST">
+                <label for="userName" style="display:block;">Name:</label>
+                <input type="text" id="userName" name="userName" maxlength="35" placeholder="Your name...">
+                <label for="comment" style="display:block; margin-top: .5em;">Comment:</label>
+                <div id="textareaHolder"><textarea id="comment" name="comment" rows="4" cols="50" maxlength="600" placeholder="Add a comment..."></textarea></div>
+                <input type="submit" value="Post Comment">
+            </form>
+        </div>
+        <div id="commentContainer"></div>
+        <h2 class="contactSubtitle" id="thankyou">Thank you for visiting!</h2>
+    </div>
+    
   </body>
 </html>
