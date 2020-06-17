@@ -1,0 +1,160 @@
+#contactTitle {
+  margin: 0 auto;
+  font-size: 2.5vw; 
+  text-align: center; 
+  margin-top: 2vh; 
+}
+
+.contactSubtitle {
+  margin: 0 auto;
+  text-align: center; 
+  margin-top: 2vh; 
+  margin-bottom: 2vh; 
+}
+
+#iconSection {
+  background-color:  rgb(228, 227, 227);
+  box-shadow: 0 0 1px 1px rgb(228, 227, 227);
+  padding: 3%;
+  max-width: 100%;
+  margin: 0 auto; 
+  margin-top: 10vh;
+}
+
+#iconFlex {
+  margin: 0 auto;
+  margin-top: 5vh; 
+  display: flex;
+  width: auto;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center; 
+}
+
+.iconBox {
+  display: flex;
+  align-items: flex-end; 
+  flex-flow: column;
+  padding: 5px;
+  width: 15%;
+  height: 15%;
+  margin: 0% 10%;
+}
+
+.pic {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+figcaption {
+  background-color: #222;
+  border-radius: 20px;
+  color: #fff;
+  font: italic medium sans-serif;
+  padding: 1em;
+  text-align: center;
+  vertical-align:center;
+}
+
+#commentSection {
+  background-color: #333760;
+  padding: 5%;
+  max-width: 100%;
+  margin: 0 auto; 
+  /* #501B1D;
+  #333760;*/
+}
+
+#textareaHolder {
+   width: 100%;
+}
+
+.commentForm {
+  border: 2px ridge whitesmoke;
+  background: rgb(228, 227, 227);
+  border-radius: 4px;
+  width: 60%;
+  padding: 2%;
+  margin: 2vh auto; 
+}
+
+.commentBox {
+  border: 2px ridge whitesmoke;
+  background: rgb(228, 227, 227);
+  border-radius: 4px;
+  width: 60%;
+  padding: 1% 2%;
+  margin: 2vh auto; 
+}
+
+.nameHeading {
+  text-transform: capitalize;
+  margin: 0; 
+  margin-bottom: 1%;
+  font-size: 1.2em;
+  font-weight: 700;  
+}
+
+.time {
+  margin: 1% 0; 
+  font-size: 1em;
+  font-weight: 400;  
+}
+.commentText {
+  font-size: 1.1em;
+  font-weight: 500;  
+}
+
+textarea[id=comment] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;	
+  width: 100%;
+  padding: 12px 2%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+}
+::-webkit-input-placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-moz-placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:-ms-input-placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[id=userName] {
+  width: auto;
+  padding: 12px 2%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: auto;
+  background-color: #7A2640;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#thankyou {
+  color: whitesmoke;
+  margin-top: 7vh; 
+  margin-bottom: 0vh; 
+}

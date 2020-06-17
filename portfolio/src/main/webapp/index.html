@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Yaa Owusu</title>
+        <link rel="shortcut icon" href="faviconFinal@2x.ico"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.typekit.net/wkj4sej.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <header>
+        <div class="navBar">
+        <div id="logo"><a href='/'>Yaa Owusu</a></div>
+        <ul class="navOptions">
+            <li id="option" class="active"><a href='/'>Home</a></li>
+            <li id="option"><a href='about/'>About</a></li>
+            <li id="option"><a href='projects/'>Projects</a></li>
+            <li id="option"><a href='contact/'>Contact</a></li>
+            <li id="option">
+                <a href="https://github.com/yaaowusu00" target="_blank">
+                    <img src="githubSmall.svg" alt="Link to GitHub"/>
+                 </a>
+            </li>
+        </ul>
+        </div>
+    </header>
+    <body>
+    <div class="container">
+        <img src="grp.png" alt="Picture of Yaa"/>
+        <span id="title">Yaa Owusu</span>
+        <span id="homeContent">
+            I’m a junior pursuing a joint degree in computer science and psychology at Yale University. I’m Interested in applying my skills in front-end development and UX/UI design in creating meaningful products.
+        </span>
+    </div> 
   </body>
 </html>

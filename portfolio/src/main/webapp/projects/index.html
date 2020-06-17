@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Yaa Owusu</title>
+    <link rel="shortcut icon" href="../faviconFinal@2x.ico"/>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://use.typekit.net/wkj4sej.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+    <header>
+        <div class="navBar">
+        <div id="logo"><a href='/'>Yaa Owusu</a></div>
+        <ul class="navOptions">
+            <li id="option"><a href='/'>Home</a></li>
+            <li id="option"><a href='../about/'>About</a></li>
+            <li id="option" class="active"><a href='/projects'>Projects</a></li>
+            <li id="option"><a href='../contact/'>Contact</a></li>
+            <li id="option">
+                <a href="https://github.com/yaaowusu00" target="_blank">
+                    <img src="../githubSmall.svg" alt="Link to GitHub"/>
+                 </a>
+            </li>
+        </ul>
+        </div>
+    </header>
+    <body>
+    <!-- The grid: 2 columns -->
+        <div class= "grid">
+            <div class="row1">
+                <div class="pictureBox" id="grad" onclick="openTab('gradDescription');">
+                    <div class="name">Yale Daily News Commencement Site</div>
+                </div>
+                <div class="pictureBox" id="map" onclick="openTab('mapDescription');">
+                    <div class="name">Interactive Map</div>
+                </div>
+                <div class="pictureBox" id="fudge" onclick="openTab('fudgeDescription');">
+                    <div class="name">Fudge Ratio Calculator</div>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="pictureBox" id="mhgap" onclick="openTab('mhgapDescription');">
+                    <div class="name">Mental Health Gap Web App</div>
+                </div>
+                <div class="pictureBox" id="breakout" onclick="openTab('brDescription');">
+                    <div class="name">Atari Breakout Recreation</div>
+                </div>
+                <div class="pictureBox" id="firstYr" onclick="openTab('fyDescription');">
+                    <div class="name">Yale Daily News First Year Site</div>
+                </div>
+            </div>
+        </div>
+        <!-- The pop up descriptions (hidden by default) -->
+        <div class="content">
+            <div id="brDescription" class="descriptionContainer" style="height: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                <h2>Atari Breakout</h2>
+                <p> For a final project in my Intro to Programming Class,
+                I worked with a partner to replicate the popular game Atari Breakout with Java, using Object-Oriented Programming and linked lists. </p>
+                <video style="outline:none; width:70%; height:70%;" controls>
+                    <source src="projImgs/breakout recording .mp4" type="video/mp4">
+                </video>
+                </div>
+            </div>
+            <div id="mhgapDescription" class="descriptionContainer" style="height: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>Mental Health Gap Web App</h2>
+                    <p> In summer 2019, I created an web app mvp for the WHO Mental Health Gap project using JavaScript, 
+                        Node.js and Vue basics under the direction of Yale Lecturer Dr. Benedict Brown.
+                        At the end of the summer, we began the process of converting the web app in to a native 
+                        Android application using Apache Cordova.
+                    </p>
+                    <video style="outline:none; width:70%; height:70%;" controls>
+                        <source src="projImgs/mhgapcut.mp4" type="video/mp4">
+                    </video>
+                    <p> The purpose of the app is to assist primary healthcare workers in rural areas in diagnosing mental health conditions. 
+                        The video above demonstrates the protocol for diagnosing psychosis, but working off of a previous hard-coded version, I coded the app in such a way  
+                        that I used a JSON with a specific structure to encode the diagnosis flow chart, so that the web app could be generalized
+                        to the diagnosis of any other conditions encoded in a JSON with the same structure.
+                    </p>
+                </div>
+            </div>
+            <div id="gradDescription" class="descriptionContainer" style="height: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2><a href=https://yaledailynews.com/commencement2020/>Yale Daily News Commencement Issue Website</a></h2>
+                    <p>I designed and developed the first ever online special issue 
+                        of the Yale Daily News with another member of the YDN tech team
+                        in the one week time period between the end of classes and 
+                        commencement day. We used JavaScript (jQuery), HTML, CSS, and Handlebars.js.
+                    </p>
+                    <h3><a href="https://yaledailynews.com/commencement2020" target="_blank">Check out the site!</a></h3>
+                    <a href="https://yaledailynews.com/commencement2020">
+                        <img src="projImgs/gradDsktp.png" alt="Picture of site"/>
+                    </a>
+                </div>
+            </div>
+            <div id="fyDescription" class="descriptionContainer"  style="height: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2>Yale Daily News First Year Issue Website</h2>
+                    <p>I worked with a partner to create the Yale Daily News First Year Issue site, 
+                        which is set to launch later this summer! The website is supposed to aid 
+                        the class of 2024 in their transition to Yale! 
+                    </p>
+                </div>
+                <!-- link for when site goes live
+                <a href="https://yaledailynews.com/firstyear2020/">-->
+                    <img src="projImgs/fyDsktp.png" alt="Picture of site"/>
+                <!--</a>-->
+            </div>
+            <div id="fudgeDescription" class="descriptionContainer"  style="height: 0px;">
+                <span onclick="closeTab()" class="closebtn">x</span>
+                <div class="descriptionText">
+                    <h2><a href=http://fudgeratio-274623.appspot.com>Fudge Ratio Calculator</a></h2>
+                    <p>During the spring 2020 session of Google Software Product Sprint, my team and I created a Fudge Ratio calculator (using Java, JavaScript, HTML and CSS), which seeks to improve 
+                        user productivity by changing scheduling habits. I worked mainly on the landing and about pages.</p>
+                    <h3><a href="http://fudgeratio-274623.appspot.com" target="_blank">Check out the site!</a></h3>
+                    <a href="http://fudgeratio-274623.appspot.com">
+                        <img src="projImgs/fudge.png" alt="Picture of site"/>
+                    </a>
+                </div>
+            </div>
+            <div id="mapDescription" class="descriptionContainer"  style="height: 0px;">
+                <span onclick="closeTab()" class="closebtn">x </span>
+                <div class="descriptionText">
+                    <h2>Interactive Map of Yale Study Spots</h2>
+                    <p>For the 2020 Yale Daily News First Year Issue, which is set to launch later this summer, 
+                        I added tooltips to a graphic made by a another memeber of the team to create an 
+                        interactive way to display an article.
+                    </p>
+                    <!-- link for when site goes live
+                    <a href="https://yaledailynews.com/firstyear2020/">-->
+                        <img src="projImgs/mapExample.png" style="max-height: 40%; max-width: 40%;"
+                         alt="Picture of map with tooltip open"/>
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+        <!-- End of the descriptions (hidden by default) -->
+    </body>
+    <script src="../script.js"></script>
+</html>

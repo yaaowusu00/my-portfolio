@@ -1,0 +1,178 @@
+.grid {
+  position: relative;
+  margin-top: 7vh;
+}
+
+.content {
+  z-index: -3; 
+  width: 90%;
+  height: 0vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  color: whitesmoke;  
+}
+
+#breakout {
+  background-image: url("projImgs/breakoutCover.png");
+}
+
+#mhgap {
+  background-image: url("projImgs/mhgap-logo.png");
+}
+
+#grad {
+  background-image: url("projImgs/ydn2020Cover.png");
+}
+
+#firstYr {
+  background-image: url("projImgs/ydnFirstYrCover.png");
+}
+
+#fudge {
+  background-image: url("projImgs/fudge.png"); 
+}
+
+#map {
+  background-image: url("projImgs/map.png");
+}
+
+.row1 {  
+  justify-content: center;
+  width: 90vw;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns:  2fr 1fr 1.8fr;
+  grid-auto-flow: column;
+  height: 60vh;
+  grid-gap: 1rem;
+}
+.row2 {
+  justify-content: center;
+  width: 90vw;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns:  1fr 1fr 2.5fr;
+  grid-auto-flow: column;
+  height: 60vh;
+  grid-gap: 1rem;
+}
+
+.pictureBox {
+  background-color: black;
+  box-shadow: 8px 8px 5px rgba(0,0,0,0.3);
+  /*background-color: rgb(37, 14, 16);*/
+  border-radius: 2px;
+  background-size: contain;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.pictureBox:hover {
+  box-shadow: 12px 12px 10px rgba(0,0,0,0.3);
+}
+
+.name {
+  letter-spacing: .1em;
+  text-align: center;
+  color: whitesmoke;
+  z-index: 2;
+  font-family: futura-pt, sans-serif;
+  font-size: 1.95vw; 
+  vertical-align: top;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  width: 100%;
+  height: auto;
+  text-transform: uppercase;
+  font-weight: normal;
+  backdrop-filter: blur(0.1rem);
+  background-color: #333760ab;
+  /*background-color: rgb(67, 62, 62);*/
+
+}
+
+.descriptionContainer {
+  transition: padding 0.3s;
+  /*transition: height 0.6s;*/
+}
+
+/* descriptions in the popup box */
+#brDescription, #gradDescription , #mhgapDescription,
+ #fudgeDescription, #mapDescription, #fyDescription {
+  width: 90%;
+  height: 0vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  border-radius: 2vh;
+  color: whitesmoke;
+  background-color: #16193cef;
+  /*rgba(53, 7, 12, 0.884);*/
+  overflow-y: scroll;
+}
+
+/* Closable button inside the popup */
+.closebtn {
+  float: right;
+  color: whitesmoke;
+  font-size: 4vh;
+  cursor: pointer;
+}
+.descriptionText {
+  font-family: futura-pt, sans-serif;
+  text-align: center;
+  font-size: 3vh;
+  color: whitesmoke;
+}
+p {
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  color: inherit; 
+}
+h3 {
+  color: #BBACB4;
+  text-decoration: underline;
+}
+@media (max-width: 1000px) {
+  .row1, .row2 {  
+    width: 95vw;
+    height: 40vh;
+  }
+  .name {
+    font-size: 2.2vw;   
+  }
+}
+@media (max-width: 1200px) and (orientation: portrait) {
+  .row1, .row2 {  
+    width: 95vw;
+    height: 30vh; 
+  }
+  .row2 {
+    grid-template-columns: 1.8fr 1.8fr 2fr;
+  }
+  .name {
+    font-size: 2.2vh; 
+    font-weight: bold;  
+  }
+}
+/* to do: fix header on all pages in landscape, fix grid for iPhone X
+@media (max-width: 1200px) and (orientation: landscape) {
+  .grid {
+    margin-top: 10vh;
+  }
+}*/

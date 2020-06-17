@@ -1,28 +1,40 @@
-// Copyright 2019 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+/* determines position of the content on the top part of the about page so that it is consistent no matter what size the device is*/
+const calculateAboutHeight = () => {
+    let navHeight = $('.navBar').get(0).scrollHeight;
+    console.log(navHeight);
+    let viewportHeight = $(window).height();
+    let aboutHeight = viewportHeight - navHeight
+    console.log(aboutHeight);
+    $('#aboutSection').css('height', aboutHeight);
+};
+/*displays pop up on projects page when you click project picture*/
+const openTab = (tabName) => {
+    if (tabName !== "EMPTY_NAME") {
+         $(".content").css({"z-index":"3"});
+    }
+    let position = $(window).scrollTop() || (window.pageYOffset);
+    const elements = Array.from(document.getElementsByClassName("descriptionContainer"));
+    elements.forEach(description => ($(".content").css({"top": ((tabName === "EMPTY_NAME") ? "0": (position + 60))})));
+    elements.forEach(description => ($('#' + tabName).css({"top": ((tabName === "EMPTY_NAME") ? "0": (position + 60))})));
+    elements.forEach(description => (description.style.height = description.id === tabName ? "90vh" : "0"));
+    elements.forEach(description => (description.style.padding = description.id === tabName ? "2% 3%" : "0"));
+};  
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+/*closes pop up on projects page when you click the x*/
+const closeTab = (tabName) => {
+    openTab(tabName, "close");  
+    $(".content").css({"z-index":"-3"});
+};
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+$(document).ready(function(){
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
+    let navHeight = $('.navBar').height();
+    $('#logo').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
+    $('.navOptions').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
+    $(window).on('load', calculateAboutHeight); 
+     document.getElementsByTagName("html")[0].style.visibility = "visible";
+    window.addEventListener('resize', calculateAboutHeight);
+});
+
+
+
