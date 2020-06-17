@@ -1,12 +1,24 @@
+//display each comment on contact page in a "comment container"
+const getContent = () => {
+    fetch('/data').then(response => response.json()).then((data) => {
+        for (msg in data) {
+            let commentElement = $("<p></p>").text((data[msg]).text);
+            $("#commentContainer").append('<div class = "commentBox">' +
+            '<h1 class = "nameHeading">' +  (data[msg]).userName  + '</h1>' +
+            '<h3 class = "time">' +  (data[msg]).readableDate  + '</h3>' +
+            '<p class = "commentText">'+ (data[msg]).text + '</p></div>'); 
+        }
+    });
+};
+
 /* determines position of the content on the top part of the about page so that it is consistent no matter what size the device is*/
 const calculateAboutHeight = () => {
     let navHeight = $('.navBar').get(0).scrollHeight;
-    console.log(navHeight);
     let viewportHeight = $(window).height();
     let aboutHeight = viewportHeight - navHeight
-    console.log(aboutHeight);
     $('#aboutSection').css('height', aboutHeight);
 };
+
 /*displays pop up on projects page when you click project picture*/
 const openTab = (tabName) => {
     if (tabName !== "EMPTY_NAME") {
@@ -27,12 +39,12 @@ const closeTab = (tabName) => {
 };
 
 $(document).ready(function(){
-
     let navHeight = $('.navBar').height();
     $('#logo').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
     $('.navOptions').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
     $(window).on('load', calculateAboutHeight); 
-     document.getElementsByTagName("html")[0].style.visibility = "visible";
+    getContent();
+    document.getElementsByTagName("html")[0].style.visibility = "visible";
     window.addEventListener('resize', calculateAboutHeight);
 });
 
