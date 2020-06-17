@@ -1,6 +1,6 @@
 .grid {
   position: relative;
-  margin-top: 5vh;
+  margin-top: 7vh;
 }
 
 .content {
@@ -29,7 +29,7 @@
 }
 
 #firstYr {
-  background-image: url("projImgs/YdnFirstYrCover.png");
+  background-image: url("projImgs/ydnFirstYrCover.png");
 }
 
 #fudge {
