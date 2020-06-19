@@ -37,8 +37,6 @@ public class DataServlet extends HttpServlet {
         //dealing  with an all whitespace input in name and comment
         if (comment.trim().length() == 0) {
             response.setContentType("text/html");
-            //PrintWriter out = response.getWriter();
-            //out.println("<script>alert('Please type a comment');</script>");
             response.sendRedirect("/contact/?invalid=true");
             return; 
         }
@@ -62,7 +60,8 @@ public class DataServlet extends HttpServlet {
         Query query = new Query("Comment").addSort("timeStamp", SortDirection.DESCENDING);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");  
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
+        //populate the array list with comment objects after getting info from datastore  
         for (Entity entity : results.asIterable()) {  
             String userName = (String) entity.getProperty("userName");
             String text = (String) entity.getProperty("text");

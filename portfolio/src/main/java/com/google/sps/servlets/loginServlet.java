@@ -19,6 +19,7 @@ public class loginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         UserService userService = UserServiceFactory.getUserService();
         HashMap <String, String> statusInfo = new HashMap<>();
+        //if logged in, send logout url
         if (userService.isUserLoggedIn()) {
             String userEmail = userService.getCurrentUser().getEmail();
             String redirectAfterLogout = "/contact/";
@@ -26,6 +27,7 @@ public class loginServlet extends HttpServlet {
             statusInfo.put("status", "loggedIn");
             statusInfo.put("url", logoutUrl);
         }
+        //if not logged in, send login url
         else {
             String redirectAfterLogin = "/contact/#commentSection";
             String loginUrl = userService.createLoginURL(redirectAfterLogin);
