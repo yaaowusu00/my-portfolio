@@ -3,7 +3,10 @@ package com.google.sps.servlets;
 import java.lang.*;
 import java.text.SimpleDateFormat; 
 import java.util.Date; 
+import java.io.PrintWriter;
 import com.google.sps.data.Comment;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -23,44 +26,34 @@ import javax.servlet.http.HttpServletResponse;
 public class DataServlet extends HttpServlet {
     List <String> msgs = new ArrayList<>();
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        UserService userService = UserServiceFactory.getUserService(); 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-        Entity commentEntity = new Entity("Comment");
+        String id = userService.getCurrentUser().getUserId();
+        Entity commentEntity = new Entity("Comment",id);
         String name = request.getParameter("userName");
         String comment = request.getParameter("comment");
         long timeStamp =  System.currentTimeMillis();
-
-//deal with whitespace in both categories 
-        if (comment.trim().length() == 0 || comment.equals("Add a comment...")) {
-            response.sendRedirect("/contact.html");
+        String userEmail = userService.getCurrentUser().getEmail();
+        //dealing  with an all whitespace input in name and comment
+        if (comment.trim().length() == 0) {
+            response.setContentType("text/html");
+            //PrintWriter out = response.getWriter();
+            //out.println("<script>alert('Please type a comment');</script>");
+            response.sendRedirect("/contact/?invalid=true");
             return; 
         }
-        if (name.trim().length() == 0 || name.equals("Your name...")) {
+        if (name.trim().length() == 0) {
             commentEntity.setProperty("userName","Anonymous");
         }
         else {
             commentEntity.setProperty("userName", name);
         }
+        commentEntity.setProperty("email", userEmail);
+        commentEntity.setProperty("userId", id);
         commentEntity.setProperty("text", comment);
         commentEntity.setProperty("timeStamp", timeStamp);
         datastore.put(commentEntity);
-        
-        response.sendRedirect("./contact.html#commentSection");
-    }
-    
-    private List getNameandComment(HttpServletRequest request, String request1, String request2) {
-        String name = request.getParameter(request1);
-        String comment = request.getParameter(request2);
-        List <String> res = new ArrayList<>();
-        if (comment.equals("")) {
-            return res; 
-        }
-        if (name.equals("")) {
-            res.add(comment);
-            return  res; 
-        }
-        res.add(name);
-        res.add(comment);
-        return res; 
+        response.sendRedirect("/contact/#commentSection");
     }
 
    @Override
@@ -88,13 +81,5 @@ public class DataServlet extends HttpServlet {
         Gson gson = new Gson();
         String resultString = gson.toJson(commentList);
         return resultString; 
-    }
-
-    private List generateMsgs() {
-        List <String> msgs = new ArrayList<>();
-        msgs.add("hello");
-        msgs.add("nice to meet you");
-        msgs.add("thanks for visiting");
-        return msgs;
     }
 }
