@@ -1,16 +1,3 @@
-//display each comment on contact page in a "comment container"
-const getContent = () => {
-    fetch('/data').then(response => response.json()).then((data) => {
-        for (msg in data) {
-            let commentElement = $("<p></p>").text((data[msg]).text);
-            $("#commentContainer").append('<div class = "commentBox">' +
-            '<h1 class = "nameHeading">' +  (data[msg]).userName  + '</h1>' +
-            '<h3 class = "time">' +  (data[msg]).readableDate  + '</h3>' +
-            '<p class = "commentText">'+ (data[msg]).text + '</p></div>'); 
-        }
-    });
-};
-
 /* determines position of the content on the top part of the about page so that it is consistent no matter what size the device is*/
 const calculateAboutHeight = () => {
     let navHeight = $('.navBar').get(0).scrollHeight;
@@ -30,7 +17,7 @@ const openTab = (tabName) => {
     elements.forEach(description => ($('#' + tabName).css({"top": ((tabName === "EMPTY_NAME") ? "0": (position + 60))})));
     elements.forEach(description => (description.style.height = description.id === tabName ? "90vh" : "0"));
     elements.forEach(description => (description.style.padding = description.id === tabName ? "2% 3%" : "0"));
-};  
+}; 
 
 /*closes pop up on projects page when you click the x*/
 const closeTab = (tabName) => {
@@ -43,7 +30,6 @@ $(document).ready(function(){
     $('#logo').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
     $('.navOptions').css('height' , navHeight); //making the 2 parts of the nav bar the same height 
     $(window).on('load', calculateAboutHeight); 
-    getContent();
     document.getElementsByTagName("html")[0].style.visibility = "visible";
     window.addEventListener('resize', calculateAboutHeight);
 });

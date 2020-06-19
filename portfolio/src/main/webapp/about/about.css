@@ -4,6 +4,7 @@ html { visibility:hidden; }
 #aboutsection {
     min-height: 80vh; 
 }
+
 .aboutText a {
   color: rgb(201, 60, 105);
   border-bottom: rgb(201, 60, 105) 0.125em solid;
@@ -30,6 +31,7 @@ html { visibility:hidden; }
     display: flex;
     flex-direction: row; 
 }
+
 figure {
     border: thin #411F23 solid;
     display: flex;
@@ -39,6 +41,7 @@ figure {
     max-height: 50%;
     margin: auto;
 }
+
 .pic {
     max-width: 100%;
     max-height: 100%;
