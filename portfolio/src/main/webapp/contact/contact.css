@@ -160,3 +160,13 @@ input[type=submit] {
   margin-top: 7vh; 
   margin-bottom: 0vh; 
 }
+
+.logoutLink a {
+  color: #0000EE;
+  border-bottom: #0000EE  0.125em solid;
+}
+
+.logoutLink a :visited {
+  color: #0000EE;
+  border-bottom: #0000EE  0.125em solid;
+}
